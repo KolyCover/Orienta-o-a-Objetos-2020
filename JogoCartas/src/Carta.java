@@ -7,7 +7,7 @@ public class Carta {
 		this.naipe = naipe;
 	}
 	
-	public int getValor() {
+	public char getValor() {
 		return valor;
 	}
 	
