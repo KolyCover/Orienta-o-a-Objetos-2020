@@ -9,6 +9,16 @@ public class Player {
 		this.name = name;
 	}
 	
+	public String[] getCardsNames() {
+		String[] cardsNames = new String[this.cards.size()];
+		
+		for(int i = 0; i < cardsNames.length; i++) {
+			cardsNames[i] = cards.get(i).getName();
+		}
+		
+		return cardsNames;
+	}
+	
 	public String getName() {
 		return name;
 	}
