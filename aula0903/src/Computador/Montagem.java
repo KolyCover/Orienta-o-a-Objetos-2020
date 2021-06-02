@@ -41,6 +41,5 @@ public class Montagem {
     }
     
     public static void main (String[] args) {
-        Computador c = criarComp();
     }
 }

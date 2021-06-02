@@ -1,3 +1,4 @@
+package Game;
 public class Card {
 	private char value;
 	private char suit;
