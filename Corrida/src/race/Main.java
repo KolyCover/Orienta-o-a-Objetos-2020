@@ -1,36 +1,41 @@
 package race;
 
 import java.awt.Color;
-
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.*;
 
-/*
- 	1- Atribuir movimentação aleatória aos objetos JPanel
-	2- Verificar qual objeto atingiu primeiro o lado direito do JFrame
-	Simular uma corrida
- */
-
 public class Main {
+	static ArrayList<JPanel> squares;
+	
+	public void cronometro() {
+		Timer timer = new Timer();
+		
+ 		timer.scheduleAtFixedRate(
+ 			new TimerTask() {
+ 				public void run() {
+ 					
+ 				}
+ 			}, 100 , 1000);
+ 	}
+	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Corrida de quadrados");
 		
 		Color[] palette = {Color.CYAN, Color.MAGENTA, Color.GRAY, Color.orange, Color.GREEN, Color.PINK};
 		
-		int y = 0;
+		RaceSquare rs = new RaceSquare(palette, 80, 6);
+		squares = rs.createSquares(0);
 		
-        for (int i = 0; i < 6; i++) {
-			JPanel square = new JPanel();
-			square.setBounds(0, y, 80, 80);
-			square.setBackground(palette[i]);
-
+		for(JPanel square : squares) {
 			frame.add(square);
-			
-			y += square.getHeight() + 10;
 		}
         
-		frame.setSize(600, 569);  
+		frame.setSize(1200, 570);  
         frame.setLocationRelativeTo(null);  
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        frame.setResizable(false);
         frame.setLayout(null);
         frame.setVisible(true);
     }
